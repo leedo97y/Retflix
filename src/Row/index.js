@@ -13,7 +13,6 @@ const Row = ({title, fetchUrl, isLargeRow}) =>{
             
 
             setMovies(request.data.results);
-            console.log(request)
             return request;
         }
         fetchData();
@@ -23,11 +22,11 @@ const Row = ({title, fetchUrl, isLargeRow}) =>{
         <Container>
             <h2>{title}</h2>
   
-            <div className="row__posters">
+            <div className="rowLines">
                 {movies.map((movie) => (
                     <img
                         key={movie.id}
-                        className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                        className={`rowLineItem ${isLargeRow && "imgSizeLarge"}`}
                         src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
                         alt={movie.name}
                     />
