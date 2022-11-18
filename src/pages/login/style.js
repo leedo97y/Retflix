@@ -1,14 +1,10 @@
-import React from "react";
-import { MainContainer } from "./style";
+import styled from "@emotion/styled";
 
-const Main = () => {
-
-    return (
-        <MainContainer>
+export const LoginContainer = styled.section`
+    max-width: 100%;
+    display: grid;
 
 
-        </MainContainer>
-    )
-}
 
-export default Main;
+
+`
