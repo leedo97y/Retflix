@@ -1,6 +1,7 @@
 import React from 'react';
-import { Nav, LeftSide, RightSide, RightDiv, ImageDiv } from './style';
+import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv } from './style';
 import Logo from '../../assets/images/Logo.png';
+import Search from '../../assets/images/search.png';
 import Profile from '../../assets/images/bubbleProfile.jpg';
 
 const Header = () => {
@@ -12,32 +13,30 @@ const Header = () => {
                 </ImageDiv>
                 <LeftSide>
                     <span>
-                        <a href="1.html">홈</a>
+                        <a href="/main">홈</a>
                     </span>
                     <span>
-                        <a href="1.html">시리즈</a>
+                        <a href="/series">시리즈</a>
                     </span>
                     <span>
-                        <a href="1.html">영화</a>
+                        <a href="/movie">영화</a>
                     </span>
                     <span>
-                        <a href="1.html">NEW! 요즘 대세 콘텐츠</a>
+                        <a href="/newContents">NEW! 요즘 대세 콘텐츠</a>
                     </span>
                     <span>
-                        <a href="1.html">내가 찜한 콘텐츠</a>
+                        <a href="/like">내가 찜한 콘텐츠</a>
                     </span>
                 </LeftSide>
                 <RightSide>
-                    <RightDiv>
-                        <img id="searchImg" src="#" alt="search" />
-                        <div>
-                            <img id="profileImg" src={Profile} alt="profile" />
-                            <select>
-                                <option></option>
-                                <option>계정관리</option>
-                            </select>
-                        </div>
-                    </RightDiv>
+                    <img id="searchImg" src={Search} alt="search" />
+                    <ProfileDiv>
+                        <img id="profileImg" src={Profile} alt="profile" />
+                        <select id="select">
+                            <option></option>
+                            <option>계정관리</option>
+                        </select>
+                    </ProfileDiv>
                 </RightSide>
             </Nav>
         </>
