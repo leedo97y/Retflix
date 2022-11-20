@@ -18,7 +18,7 @@ export const FooterBody = styled.div`
 `;
 
 export const TopDiv = styled.div`
-    margin-top: 40px;
+    margin-top: 60px;
 `;
 
 export const MiddleDiv = styled.div`
