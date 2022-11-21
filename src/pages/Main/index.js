@@ -39,7 +39,8 @@ const Main = () => {
                 <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
                 <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
             </div>
-            <Footer />
+        <Footer />
+
         </MainContainer>
     );
 };

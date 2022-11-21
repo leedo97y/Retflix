@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 const base_url = 'https://image.tmdb.org/t/p/original/';
 

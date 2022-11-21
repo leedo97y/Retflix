@@ -6,7 +6,7 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Container } from './style';
-import Modal from '../components/Modal';
+import Modal from 'components/Modal';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
@@ -31,7 +31,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
             console.log(request);
-            // console.log(request.data.results[0].title);
             return request;
         }
         fetchData();

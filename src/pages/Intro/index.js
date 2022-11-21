@@ -6,11 +6,20 @@ import {IntroContentText,IntroContentVideo} from "../../components/IntroContent/
 import {IntroContainer,IntroContent} from "./style"
 const Intro = () => {
 
+    const test = () => {
+        return (
+            <h1>
+                스마트 TV, PlayStation, Xbox, Chromecast,<br/> Apple TV, 블루레이 플레이어 등 다양한<br/> 디바이스에서 시청하세요.
+
+            </h1>
+        )
+    }
+
     return (
         <IntroContainer>
             <IntroHeader/>
             <IntroContent>
-                <IntroContentText header={`TV로 즐기세요.`} content={`스마트 TV, PlayStation, Xbox, Chromecast,\n Apple TV, 블루레이 플레이어 등 다양한\n 디바이스에서 시청하세요.`}/>
+                <IntroContentText header={`TV로 즐기세요.`} content={test()} />
                 <IntroContentVideo src={`https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png`}/>
             </IntroContent>
             <IntroContent>

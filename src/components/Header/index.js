@@ -1,8 +1,8 @@
 import React from 'react';
 import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv } from './style';
-import Logo from '../../assets/images/Logo.png';
-import Search from '../../assets/images/search.png';
-import Profile from '../../assets/images/bubbleProfile.jpg';
+import Logo from 'assets/images/Logo.png';
+import Search from 'assets/images/search.png';
+import Profile from 'assets/images/bubbleProfile.jpg';
 
 const Header = () => {
     return (
