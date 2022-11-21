@@ -6,7 +6,7 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Container } from './style';
-import Modal from '../components/Modal';
+import Modal from 'components/Modal';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
@@ -46,9 +46,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                         <img
                             key={movie.id}
                             className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
-                            src={`${base_url}${
-                                isLargeRow ? movie.poster_path : movie.backdrop_path
-                            }`}
+                            src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
+                                }`}
                             alt={movie.name}
                         />
                         <div className="icons">
