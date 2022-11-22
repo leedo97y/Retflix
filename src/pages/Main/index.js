@@ -6,23 +6,10 @@ import Row from 'Row';
 import axios from 'axios.js';
 import requests from 'requests';
 import intern from 'assets/images/intern.png';
+import Video from "react-player";
 
 const Main = () => {
-    // const [img, setImg] = useState([]);
-    // const base_url = "https://image.tmdb.org/t/p/original/";
 
-    // useEffect(() => {
-
-    //     movieData();
-    // }, [])
-
-    // const movieData = async() => {
-    //     const request = await axios.get(requests.fetchDocumentaries);
-    //     setImg(request.data.results);
-    //     return request;
-    // }
-
-    // const poster = img.map(e => e.poster_path)
 
     return (
         <MainContainer>
@@ -30,6 +17,7 @@ const Main = () => {
             <div>
                 <article>
                     <img src={intern} alt="visualImg" />
+                    {/* <Video url={url} playing={true} /> */}
                 </article>
                 <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} />
                 <Row title="Trending Now" fetchUrl={requests.fetchTrending} />

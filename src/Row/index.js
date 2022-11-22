@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
@@ -20,8 +20,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         setModalOpen(true);
         setMovieTitle(title);
         setMovieImg(isLargeRow ? largeImg : img);
-        console.log(title);
     };
+
+
     const closeModal = () => {
         setModalOpen(false);
     };
@@ -30,27 +31,53 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
-            console.log(request);
-            return request;
+            // console.log(request,"!@#123123123")
+            
         }
         fetchData();
     }, [fetchUrl]);
 
+    useEffect(() => {
+        async function axiosData(){
+            const API_KEY = "ade4d8200b5fce37d7401ffb7f381d9f";
+            const idd = movies.map(e => e.id);
+            // const res = await axios.get(`https://api.themoviedb.org/3/movie/${76669}?api_key=${API_KEY}&language=en-US`);
+          
+            // const res = await axios.get(`https://api.themoviedb.org/3/movie/${76669}/videos?api_key=${API_KEY}&language=en-US`);
+        }
+        axiosData();
+        
+    },[])
+    
+
+
     return (
+        <>
         <Container>
             <h2>{title}</h2>
-            <div className="row__posters">
-                {movies.map(movie => (
-                    <div className="content">
+
+            <div className="rowLines">
+                {movies.map(movie => {
+                    return <img 
+                        key={movie.id}
+                        className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
+                        src={`${base_url}${
+                            isLargeRow ? movie.poster_path : movie.backdrop_path
+                        }`}
+                        alt={movie.name}
+                    />
+                
+
+                   
+                    /* <div className="content" key={movie.id}>
                         <img
-                            key={movie.id}
-                            className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
+                            className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
                             src={`${base_url}${
                                 isLargeRow ? movie.poster_path : movie.backdrop_path
                             }`}
                             alt={movie.name}
                         />
-                        <div className="icons">
+                        <div className="icons" >
                             <span className="left">
                                 <FontAwesomeIcon icon={faCirclePlay} />
                                 <FontAwesomeIcon icon={faCirclePlus} />
@@ -69,16 +96,19 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                                 />
                             </span>
                         </div>
-                    </div>
-                ))}
+                    </div> */
+                })}
             </div>
-            <Modal
+            
+        </Container>
+        <Modal
                 open={modalOpen}
                 close={closeModal}
                 movieTitle={movieTitle}
                 img={movieImg}
-            ></Modal>
-        </Container>
+        ></Modal>
+
+        </>
     );
 };
 
