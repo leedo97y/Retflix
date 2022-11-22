@@ -1,7 +1,7 @@
 import React from "react";
 import { LoginContainer } from "./style";
-import loginBG from 'assets/images/KR_login_bg.jpg';
 import LoginHeader from 'components/LoginHeader';
+import LoginContent from 'components/LoginContent';
 import Footer from "components/Footer";
 
 const Login = () => {
@@ -9,11 +9,8 @@ const Login = () => {
     return (
         <LoginContainer>
             <LoginHeader />
-            <div>
-                <article>
-                    <img src={loginBG} alt="loginBG" />
-                </article>
-            </div>
+            <LoginContent />
+
             <Footer />
         </LoginContainer>
     )

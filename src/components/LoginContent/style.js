@@ -1,6 +1,6 @@
-// LoginHeader
+// LoginContent
 import styled from "@emotion/styled";
-export const HeaderStyle = styled.div`
+export const ContentStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 15px;
