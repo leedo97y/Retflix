@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
-import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
-import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
+// 리액트 아이콘 import
+import {
+    IoIosArrowDropdown,
+    IoMdArrowDroprightCircle,
+    IoMdAddCircleOutline,
+    IoMdThumbsUp,
+} from 'react-icons/io';
 import { Container } from './style';
 import Modal from '../components/Modal';
 
@@ -15,11 +17,14 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [movieTitle, setMovieTitle] = useState('');
     const [movieImg, setMovieImg] = useState('');
-
-    const openModal = (title, largeImg, img) => {
+    const [releaseDate, setReleaseDate] = useState('');
+    const [overview, setOverview] = useState('');
+    const openModal = (title, largeImg, img, releaseDate, overview) => {
         setModalOpen(true);
         setMovieTitle(title);
         setMovieImg(isLargeRow ? largeImg : img);
+        setReleaseDate(releaseDate);
+        setOverview(overview);
         console.log(title);
     };
     const closeModal = () => {
@@ -31,7 +36,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
             console.log(request);
-            // console.log(request.data.results[0].title);
             return request;
         }
         fetchData();
@@ -53,18 +57,19 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                         />
                         <div className="icons">
                             <span className="left">
-                                <FontAwesomeIcon icon={faCirclePlay} />
-                                <FontAwesomeIcon icon={faCirclePlus} />
-                                <FontAwesomeIcon icon={faThumbsUp} />
+                                <IoMdArrowDroprightCircle />
+                                <IoMdAddCircleOutline />
+                                <IoMdThumbsUp />
                             </span>
                             <span className="right">
-                                <FontAwesomeIcon
-                                    icon={faCircleChevronDown}
+                                <IoIosArrowDropdown
                                     onClick={() => {
                                         openModal(
                                             movie.name,
                                             movie.poster_path,
                                             movie.backdrop_path,
+                                            movie.first_air_date,
+                                            movie.overview,
                                         );
                                     }}
                                 />
@@ -73,12 +78,15 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                     </div>
                 ))}
             </div>
-            <Modal
-                open={modalOpen}
-                close={closeModal}
-                movieTitle={movieTitle}
-                img={movieImg}
-            ></Modal>
+            {modalOpen && (
+                <Modal
+                    closeModal={closeModal}
+                    movieTitle={movieTitle}
+                    img={movieImg}
+                    releaseDate={releaseDate}
+                    overview={overview}
+                ></Modal>
+            )}
         </Container>
     );
 };
