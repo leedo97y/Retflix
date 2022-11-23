@@ -5,7 +5,9 @@ import { HeaderStyle } from './style'
 const LoginHeader = () => {
     return (
         <HeaderStyle>
-            <div className="item logo"><img src={Logo} alt="logo" /></div>
+            <div className="item logo">
+                <img src={Logo} alt="logo" />
+            </div>
         </HeaderStyle>
     )
 }

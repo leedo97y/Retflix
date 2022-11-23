@@ -4,15 +4,16 @@ export const HeaderStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 15px;
-    margin-top: 2px;
-    margin-left: 55px;
-
-    .item{
+    margin-top: 10px;
+    margin-left: 31px;
+    background: transparent;
+    
+    .item {
         display: flex;
         align-item: center;
 
     }
-    .item.logo{
+    .item.logo {
         justify-content: flex-start;
     }
 `;
