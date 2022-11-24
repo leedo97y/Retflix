@@ -14,13 +14,15 @@ const Header = () => {
     // const [movies, setMovies] = useState([]);
 
     // useEffect(() => {
-    //     async function getData() {
-    //         const request = await axios.get(url);
+    //     async function fetchData() {
+    //         const request = await axios.get(fetchUrl);
     //         setMovies(request.data.results);
+    //         console.log(request);
+    //         // console.log(request.data.results[0].title);
     //         return request;
     //     }
-    //     getData();
-    // }, [url]);
+    //     fetchData();
+    // }, [fetchUrl]);
 
     return (
         <>
