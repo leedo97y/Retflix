@@ -84,7 +84,7 @@ const Intro = () => {
             </IntroContent>
         <Footer/>
         </IntroContainer>
-    )
-}
+    );
+};
 
 export default Intro;

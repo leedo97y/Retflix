@@ -1,5 +1,6 @@
 //introHeader
 import styled from "@emotion/styled";
+
 export const Headerdiv = styled.div`
     z-index: 2;
     position: absolute;
@@ -34,5 +35,5 @@ export const Headerdiv = styled.div`
         border-radius : 5px;
     }
 
-`;
+`
 

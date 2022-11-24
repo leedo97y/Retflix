@@ -1,9 +1,8 @@
-import styled from "@emotion/styled";
-
+import styled from '@emotion/styled';
 export const ContentText = styled.div`
-    padding:30px 20px;
+    padding: 30px 20px;
 
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows : 0.5fr 0.5fr;
 
@@ -22,8 +21,6 @@ export const ContentText = styled.div`
         padding-left:20px;
         font-size: 20px;
     }
-
-
 `;
 
 export const ContentVideo = styled.div`
@@ -67,4 +64,3 @@ export const ContentVideo = styled.div`
 //     height:300px;
 
 // `;
-
