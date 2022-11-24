@@ -2,21 +2,29 @@
 import styled from "@emotion/styled";
 
 export const Headerdiv = styled.div`
+    z-index: 2;
+    position: absolute;
+
+    width : 100vw;
+
     display:grid;
     grid-template-columns: 1fr 1fr;
-    // margin : 10px;
-    padding:10px;
     .item{
         display:flex;
-        align-item :center;
-
+        align-content :center;
     }
     .item.logo{
         justify-content: flex-start;
+        padding-top: 50px;
+        padding-left:50px;   
     }
+
+
+
     .item.button{
         justify-content: flex-end;
-
+        padding-top: 50px;
+        padding-right:50px;   
     }
     .item.button button{
         width : 100px;
