@@ -21,10 +21,10 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     const [overview, setOverview] = useState('');
 
 
-    
+
     const [hover, setHover] = useState(false);
 
-    function changeHover(){
+    function changeHover() {
 
     }
 
@@ -45,54 +45,53 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
-            
+
         }
         fetchData();
     }, [fetchUrl]);
 
-    
+
     return (
         <>
-        <Container>
-            <strong>{title}</strong>
+            <Container>
+                <strong>{title}</strong>
 
-            <div className="rowLines">
-                {movies.map(movie => {
-                
-                return(
-                    <div className="content" key={movie.id}>
-                        <img
-                            // onMouseOver={}
-                            className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
-                            src={`${base_url}${
-                                isLargeRow ? movie.poster_path : movie.backdrop_path
-                            }`}
-                            alt={movie.name}
-                        />
-                        <div className="icons" ref={chHover}>
-                            <span className="left">
-                                <IoMdArrowDroprightCircle />
-                                <IoMdAddCircleOutline />
-                                <IoMdThumbsUp />
-                            </span>
-                            <span className="right">
-                                <IoIosArrowDropdown
-                                    onClick={() => {
-                                        openModal(
-                                            movie.name,
-                                            movie.poster_path,
-                                            movie.backdrop_path,
-                                            movie.first_air_date,
-                                            movie.overview,
-                                        );
-                                    }}
+                <div className="rowLines">
+                    {movies.map(movie => {
+
+                        return (
+                            <div className="content" key={movie.id}>
+                                <img
+                                    // onMouseOver={}
+                                    className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
+                                    src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
+                                        }`}
+                                    alt={movie.name}
                                 />
-                            </span>
-                        </div>
-                    </div> 
-                    )
-                })}
-            </div>
+                                <div className="icons" ref={chHover}>
+                                    <span className="left">
+                                        <IoMdArrowDroprightCircle />
+                                        <IoMdAddCircleOutline />
+                                        <IoMdThumbsUp />
+                                    </span>
+                                    <span className="right">
+                                        <IoIosArrowDropdown
+                                            onClick={() => {
+                                                openModal(
+                                                    movie.name,
+                                                    movie.poster_path,
+                                                    movie.backdrop_path,
+                                                    movie.first_air_date,
+                                                    movie.overview,
+                                                );
+                                            }}
+                                        />
+                                    </span>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </Container>
 
             {modalOpen && (
