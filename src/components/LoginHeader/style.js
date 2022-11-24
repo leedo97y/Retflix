@@ -3,9 +3,8 @@ import styled from "@emotion/styled";
 export const HeaderStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 15px;
-    margin-top: 10px;
-    margin-left: 31px;
+    margin-top: 24px;
+    margin-left: 46px;
     background: transparent;
     
     .item {

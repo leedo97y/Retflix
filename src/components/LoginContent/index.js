@@ -8,26 +8,27 @@ const LoginContent = () => {
             <div className="loginBG">
                 <img src={loginBG} alt="loginBG" />
             </div>
+            {/* <div class="BGimg"></div> */}
             <article className="LoginContent">
                 <div className="LoginMainForm">
                     <h1>로그인</h1>
                     <div className="LoginForm">
                         <div className="FieldID">
                             <label>
-                                <input className="InputID">
+                                <input className="InputID" placeholder="이메일 주소 또는 전화번호">
                                 </input>
-                                <label for="id_userID" className="placeLabel">
+                                {/* <label for="id_userID" className="placeLabel">
                                     이메일 주소 또는 전화번호
-                                </label>
+                                </label> */}
                             </label>
                         </div>
                         <div className="FieldPW">
                             <label>
-                                <input className="InputPW">
+                                <input className="InputPW" placeholder="비밀번호">
                                 </input>
-                                <label for="pw_userPW" className="placeLabel">
+                                {/* <label for="pw_userPW" className="placeLabel">
                                     비밀번호
-                                </label>
+                                </label> */}
                             </label>
                         </div>
                         <button className="LoginBtn">
@@ -53,6 +54,7 @@ const LoginContent = () => {
                     </div>
                 </div>
             </article>
+            {/* <div class="BGimg-cover"></div> */}
         </ContentStyle>
     )
 }
