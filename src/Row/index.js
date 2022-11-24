@@ -31,7 +31,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
-            // console.log(request,"!@#123123123")
             
         }
         fetchData();
@@ -54,22 +53,13 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     return (
         <>
         <Container>
-            <h2>{title}</h2>
+            <strong>{title}</strong>
 
             <div className="rowLines">
                 {movies.map(movie => {
-                    return <img 
-                        key={movie.id}
-                        className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
-                        src={`${base_url}${
-                            isLargeRow ? movie.poster_path : movie.backdrop_path
-                        }`}
-                        alt={movie.name}
-                    />
                 
-
-                   
-                    /* <div className="content" key={movie.id}>
+                return(
+                    <div className="content" key={movie.id}>
                         <img
                             className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
                             src={`${base_url}${
@@ -96,11 +86,13 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                                 />
                             </span>
                         </div>
-                    </div> */
+                    </div> 
+                )
+                     
                 })}
             </div>
-            
         </Container>
+
         <Modal
                 open={modalOpen}
                 close={closeModal}
