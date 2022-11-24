@@ -7,6 +7,7 @@ const base_url = 'https://image.tmdb.org/t/p/original/';
 
 const Modal = props => {
     const { closeModal, movieTitle, img, releaseDate, overview } = props;
+    
     return (
         <ModalWrapper>
             <div>

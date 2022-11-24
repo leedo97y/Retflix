@@ -3,7 +3,6 @@ import { MainContainer, VideoWrap } from './style';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Row from 'Row';
-import axios from 'axios.js';
 import requests from 'requests';
 import intern from 'assets/images/intern.png';
 import Video from "react-player";

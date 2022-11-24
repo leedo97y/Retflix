@@ -77,7 +77,7 @@ export const ModalWrapper = styled.div`
         margin: 25px;
     }
 
-    .movieInfo span:first-child {
+    .movieInfo span:first-of-type {
         font-weight: 900;
         margin-bottom: 20px;
     }

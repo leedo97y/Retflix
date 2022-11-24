@@ -27,6 +27,13 @@ export const Container = styled.section`
 
         .content {
 
+            &:hover{
+                .icons{
+                    display: flex;
+                    position: absolute;
+                }
+            }
+            
 
             .rowLineItem {
                 object-fit: contain;
@@ -55,14 +62,13 @@ export const Container = styled.section`
                 border-radius: 0 0 5px 5px;
                 display: none;
 
-
                 & svg {
                     font-size: 25px;
                     padding: 3px;
                     color: gray;
                 }
                 
-                & .left svg:first-child {
+                & .left svg:first-of-type {
                     color: #fff;
                 }
             }
