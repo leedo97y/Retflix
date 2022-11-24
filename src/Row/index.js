@@ -1,27 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
-import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
-import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
+import {
+    IoIosArrowDropdown,
+    IoMdArrowDroprightCircle,
+    IoMdAddCircleOutline,
+    IoMdThumbsUp,
+} from 'react-icons/io';
 import { Container } from './style';
 import Modal from 'components/Modal';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
+    const chHover = useRef();
     const [movies, setMovies] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [movieTitle, setMovieTitle] = useState('');
     const [movieImg, setMovieImg] = useState('');
+    const [releaseDate, setReleaseDate] = useState('');
+    const [overview, setOverview] = useState('');
 
-    const openModal = (title, largeImg, img) => {
+
+
+    const [hover, setHover] = useState(false);
+
+    function changeHover() {
+
+    }
+
+    const openModal = (title, largeImg, img, releaseDate, overview) => {
         setModalOpen(true);
         setMovieTitle(title);
         setMovieImg(isLargeRow ? largeImg : img);
-        console.log(title);
+        setReleaseDate(releaseDate);
+        setOverview(overview);
+        console.log(overview);
     };
+
     const closeModal = () => {
         setModalOpen(false);
     };
@@ -30,55 +45,65 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
-            console.log(request);
-            // console.log(request.data.results[0].title);
-            return request;
+
         }
         fetchData();
     }, [fetchUrl]);
 
+
     return (
-        <Container>
-            <h2>{title}</h2>
-            <div className="row__posters">
-                {movies.map(movie => (
-                    <div className="content">
-                        <img
-                            key={movie.id}
-                            className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
-                            src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
-                                }`}
-                            alt={movie.name}
-                        />
-                        <div className="icons">
-                            <span className="left">
-                                <FontAwesomeIcon icon={faCirclePlay} />
-                                <FontAwesomeIcon icon={faCirclePlus} />
-                                <FontAwesomeIcon icon={faThumbsUp} />
-                            </span>
-                            <span className="right">
-                                <FontAwesomeIcon
-                                    icon={faCircleChevronDown}
-                                    onClick={() => {
-                                        openModal(
-                                            movie.name,
-                                            movie.poster_path,
-                                            movie.backdrop_path,
-                                        );
-                                    }}
+        <>
+            <Container>
+                <strong>{title}</strong>
+
+                <div className="rowLines">
+                    {movies.map(movie => {
+
+                        return (
+                            <div className="content" key={movie.id}>
+                                <img
+                                    // onMouseOver={}
+                                    className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
+                                    src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
+                                        }`}
+                                    alt={movie.name}
                                 />
-                            </span>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <Modal
-                open={modalOpen}
-                close={closeModal}
-                movieTitle={movieTitle}
-                img={movieImg}
-            ></Modal>
-        </Container>
+                                <div className="icons" ref={chHover}>
+                                    <span className="left">
+                                        <IoMdArrowDroprightCircle />
+                                        <IoMdAddCircleOutline />
+                                        <IoMdThumbsUp />
+                                    </span>
+                                    <span className="right">
+                                        <IoIosArrowDropdown
+                                            onClick={() => {
+                                                openModal(
+                                                    movie.name,
+                                                    movie.poster_path,
+                                                    movie.backdrop_path,
+                                                    movie.first_air_date,
+                                                    movie.overview,
+                                                );
+                                            }}
+                                        />
+                                    </span>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </Container>
+
+            {modalOpen && (
+                <Modal
+                    closeModal={closeModal}
+                    movieTitle={movieTitle}
+                    img={movieImg}
+                    releaseDate={releaseDate}
+                    overview={overview}
+                ></Modal>
+            )}
+        </>
     );
 };
 
