@@ -4,9 +4,6 @@ export const FooterBody = styled.div`
     width: 100%;
     height: 400px;
 
-    position: absolute;
-    bottom: 0;
-
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
     justify-content: center;
@@ -39,6 +36,12 @@ export const LeftDiv = styled.div`
 
     li {
         line-height: 25px;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: #999999;
     }
 `;
 
@@ -54,6 +57,12 @@ export const RightDiv = styled.div`
 
     li {
         line-height: 25px;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: #999999;
     }
 `;
 
