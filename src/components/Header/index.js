@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-// import axios from 'axios.js';
-// import requests from 'requests';
-import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv, SearchDiv } from './style';
+import React from 'react';
+import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv } from './style';
 import Logo from 'assets/images/Logo.png';
 import Search from 'assets/images/search.png';
 import Profile from 'assets/images/bubbleProfile.jpg';
-
-// const genre = requests.fetchGenre;
 
 const Header = () => {
     // const [text, setText] = useState('');

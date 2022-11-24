@@ -1,6 +1,6 @@
-import React from 'react';
-import Logo from 'assets/images/Logo.png';
-import { Headerdiv } from './style';
+import React from "react";
+import Logo from "assets/images/Logo.png";
+import {Headerdiv} from './style';
 
 const handleToLogin = () => {
     console.log('로그인 페이지로 가게 할것');
