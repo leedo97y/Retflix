@@ -36,6 +36,12 @@ export const LeftDiv = styled.div`
 
     li {
         line-height: 25px;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: #999999;
     }
 `;
 
@@ -51,6 +57,12 @@ export const RightDiv = styled.div`
 
     li {
         line-height: 25px;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: #999999;
     }
 `;
 
