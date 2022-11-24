@@ -1,14 +1,10 @@
 import React from "react";
 import { ContentStyle } from './style'
-import loginBG from 'assets/images/KR_login_bg.jpg';
 
 const LoginContent = () => {
     return (
         <ContentStyle>
-            <div className="loginBG">
-                <img src={loginBG} alt="loginBG" />
-            </div>
-            {/* <div class="BGimg"></div> */}
+            {/* <img src={loginBG} alt="loginBG" className="loginBG" /> */}
             <article className="LoginContent">
                 <div className="LoginMainForm">
                     <h1>로그인</h1>
@@ -17,18 +13,12 @@ const LoginContent = () => {
                             <label>
                                 <input className="InputID" placeholder="이메일 주소 또는 전화번호">
                                 </input>
-                                {/* <label for="id_userID" className="placeLabel">
-                                    이메일 주소 또는 전화번호
-                                </label> */}
                             </label>
                         </div>
                         <div className="FieldPW">
                             <label>
                                 <input className="InputPW" placeholder="비밀번호">
                                 </input>
-                                {/* <label for="pw_userPW" className="placeLabel">
-                                    비밀번호
-                                </label> */}
                             </label>
                         </div>
                         <button className="LoginBtn">
@@ -54,8 +44,7 @@ const LoginContent = () => {
                     </div>
                 </div>
             </article>
-            {/* <div class="BGimg-cover"></div> */}
-        </ContentStyle>
+        </ContentStyle >
     )
 }
 

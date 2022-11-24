@@ -6,11 +6,12 @@ export const LoginContainer = styled.div`
     background-size: cover;
     background-position: center;
 
-    .loginBG {
+    */
+    .BG {
+        position: relative;
+        /* height: 100vh; */
         background-size: cover;
-        height: 100vh; 
-        width: 100vw;
-         z-index: -1;
         opacity: 50%;
-    } */
+        z-index: 0;
+    }
 `;

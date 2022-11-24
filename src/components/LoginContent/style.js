@@ -3,18 +3,13 @@ import styled from "@emotion/styled";
 export const ContentStyle = styled.div`
     padding: 15px;
 
-    /* .BGimg {
-        position: relative;
-        background-image: url('assets/images/KR_login_bg.jpg');
-        height: 100vh;
-        background-size: cover;
-    } */
-
-    .loginBG {
+    .BG {
         position: relative;
         /* height: 100vh; */
         background-size: cover;
         opacity: 50%;
+        margin: -50px auto auto auto;
+        z-index: 0;
     }
 
     /* .BGimg-cover {
@@ -31,23 +26,23 @@ export const ContentStyle = styled.div`
         /* padding: 30px; */
         background: #000;
         border-radius: 4px;
-        z-index: 2;
+        /* z-index: 2; */
         
     }
 
-    .LoginContent::after {
+    /* .LoginContent::after {
         max-width: 400px;
         margin: 2vh auto;
         padding: 30px;
         background: #000;
         border-radius: 4px;
         opacity: 75%;
-    }
+    } */
 
     .LoginMainForm {
         display: flex;
         flex-direction: column;
-        align-items: left;
+        /* align-items: left; */
     }
 
     h1 {
@@ -64,30 +59,36 @@ export const ContentStyle = styled.div`
 
     .InputID {
         background: #333333;
+        color: #fff;
         border-color: none;
         outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
+        box-sizing: border-box;
         border-width: 0;
         border-radius: 4px;
         font-size: 16px;
         line-height: 50px;
         width: 314px;
         margin: 28px 68px 19px 68px;
+        padding: 0 20px;
     }
 
     .InputPW {
         background: #333333;
+        color: #fff;
         border-color: none;
         outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
+        box-sizing: border-box;
         border-width: 0;
         border-radius: 4px;
         font-size: 16px;
         line-height: 50px;
         width: 314px;
         margin: 19px 68px 0 68px;
+        padding: 0 20px;
     }
 
     .InputID:focus,
@@ -101,7 +102,6 @@ export const ContentStyle = styled.div`
 
     .InputID::placeholder,
     .InputPW::placeholder {
-        padding: 0 20px;
         color: #8c8c8c;
         font-weight: 500;
     }
@@ -129,7 +129,7 @@ export const ContentStyle = styled.div`
     }
     
     .LoginSubText {
-        margin: auto 48px 117px 48px;
+        margin: auto 48px auto 48px;
     }
 
     .SignUpNow {
@@ -146,6 +146,11 @@ export const ContentStyle = styled.div`
 
     .SignUpNow a:hover {
         text-decoration: underline;
+    }
+
+    .RecaptchaMsg p {
+        height: 118px;
+        margin-bottom: 40px;
     }
 
     .RecaptchaMsg p span {
