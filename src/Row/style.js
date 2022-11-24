@@ -43,12 +43,28 @@ export const Container = styled.section`
             }
 
             .icons {
-                display: none;
+                width: 240px;
+                height: 100px;
                 background-color: #000;
                 color: #fff;
+                display: flex;
                 justify-content: space-between;
-                padding: 10px;
+                align-items: center;
+                padding: 15px;
+                box-sizing: border-box;
                 border-radius: 0 0 5px 5px;
+                display: none;
+
+
+                & svg {
+                    font-size: 25px;
+                    padding: 3px;
+                    color: gray;
+                }
+                
+                & .left svg:first-child {
+                    color: #fff;
+                }
             }
         }
 
