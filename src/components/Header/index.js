@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios.js';
-import requests from 'requests';
+import React, { useState } from 'react';
+// import axios from 'axios.js';
+// import requests from 'requests';
 import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv, SearchDiv } from './style';
 import Logo from 'assets/images/Logo.png';
 import Search from 'assets/images/search.png';
 import Profile from 'assets/images/bubbleProfile.jpg';
 
-const genre = requests.fetchHorrorMovies;
+// const genre = requests.fetchGenre;
 
 const Header = () => {
     // const [text, setText] = useState('');
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState('false');
     // const [movies, setMovies] = useState([]);
 
     // useEffect(() => {
@@ -55,22 +55,14 @@ const Header = () => {
                             alt="search"
                             show={show}
                             onClick={() => {
-                                !show ? setShow(true) : setShow(false);
+                                show === 'false' ? setShow('true') : setShow('false');
                             }}
                         />
-                        {show && (
+                        {show === 'true' && (
                             <input
                                 className={show ? 'showInput' : 'hideInput'}
                                 id="searchInput"
                                 type="text"
-                                // value={text}
-                                // onChange={e => {
-                                //     e.preventDefault();
-                                //     setText(e.target.value);
-                                //     console.log(text);
-
-                                //     console.log(movies);
-                                // }}
                             />
                         )}
                     </SearchDiv>
