@@ -1,5 +1,6 @@
+//IntroHeader
 import React from "react";
-import Logo from "../../assets/images/Logo.png";
+import Logo from "assets/images/Logo.png";
 import {Headerdiv} from'./style'
 
 const handleToLogin =()=>{
@@ -10,7 +11,7 @@ const handleToLogin =()=>{
 const IntroHeader = ()=>{
     return (
         <Headerdiv>
-            <div className="item logo"><img src = {Logo}/></div>
+            <div className="item logo"><img src = {Logo} alt="넷플릭스 로고"/></div>
             <div className="item button"><button onClick ={handleToLogin}>로그인</button></div>
         </Headerdiv>
     )

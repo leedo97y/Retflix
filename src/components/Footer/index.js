@@ -1,12 +1,10 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import { FooterBody, TopDiv, MiddleDiv, BottomDiv, LeftDiv, RightDiv } from './style';
 
 const Footer = () => {
     return (
         <>
             <FooterBody>
-                <Container fluid>
                     <TopDiv>
                         <p>질문이 있으신가요? 문의전화: 080-001-9587</p>
                     </TopDiv>
@@ -62,7 +60,6 @@ const Footer = () => {
                             공정거래위원회 웹사이트
                         </p>
                     </BottomDiv>
-                </Container>
             </FooterBody>
         </>
     );

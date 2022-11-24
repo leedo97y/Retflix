@@ -1,3 +1,4 @@
+//Intro Content
 import React from "react";
 import {ContentText,ContentVideo} from'./style'
 
@@ -11,9 +12,21 @@ const IntroContentText = (props)=>{ //글자 //props?
     )
 }
 const IntroContentVideo = (props)=>{ //video
+
+    const margintop = String(props.margintop);
+
     return(
-        <ContentVideo className="item">
-            <div className="image" style={{ backgroundImage: `url(${props.src})`}}/>
+        <ContentVideo className="item" >
+            {/* 영상 껍데기 이미지 */}
+            <div className="image" style={{ backgroundImage: `url(${props.src})`}} ></div>
+            {/* 비디오 */}
+            <div className="video">
+                <video style={{marginTop: margintop}} height={props.height}  autoPlay muted loop>
+                    <source src={props.videosrc}>
+                    </source>
+                </video>
+            </div>
+
         </ContentVideo>
     )
 }
