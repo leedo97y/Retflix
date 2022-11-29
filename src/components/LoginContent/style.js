@@ -3,52 +3,26 @@ import styled from "@emotion/styled";
 export const ContentStyle = styled.div`
     padding: 15px;
 
-    .BG {
-        position: relative;
-        /* height: 100vh; */
-        background-size: cover;
-        opacity: 50%;
-        margin: -50px auto auto auto;
-        z-index: 0;
-    }
-
-    /* .BGimg-cover {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.4);                                                              
-        z-index: 1;
-    } */
-
     .LoginContent {
-        max-width: 400px;
-        margin: 2vh auto;
-        /* padding: 30px; */
-        background: #000;
+        max-width: 314px;
+        margin: 0.5vh auto 8vh auto;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 0px 68px 0px 68px;
         border-radius: 4px;
-        /* z-index: 2; */
-        
+        display: flex;
+        flex-direction: column;
     }
-
-    /* .LoginContent::after {
-        max-width: 400px;
-        margin: 2vh auto;
-        padding: 30px;
-        background: #000;
-        border-radius: 4px;
-        opacity: 75%;
-    } */
 
     .LoginMainForm {
         display: flex;
         flex-direction: column;
-        /* align-items: left; */
     }
 
     h1 {
         color: #fff;
         font-size: 32px;
-        margin: 60px 68px auto 40px;
+        margin: 60px 68px 0px 0px;
+        font-weight: 500;
     }
 
     .LoginForm {
@@ -122,6 +96,7 @@ export const ContentStyle = styled.div`
         padding: 10px auto;
         cursor: pointer;
         border-radius: 4px;
+        border: none;
         margin: 62px 68px;
         padding: 16px;
         height: 48px;
@@ -129,7 +104,7 @@ export const ContentStyle = styled.div`
     }
     
     .LoginSubText {
-        margin: auto 48px auto 48px;
+        margin: 30px 0px auto 0px;
     }
 
     .SignUpNow {
@@ -149,8 +124,7 @@ export const ContentStyle = styled.div`
     }
 
     .RecaptchaMsg p {
-        height: 118px;
-        margin-bottom: 40px;
+        height: 35px;
     }
 
     .RecaptchaMsg p span {
@@ -163,6 +137,7 @@ export const ContentStyle = styled.div`
         border: none;
         color: #0071eb;
         font-size: 13px;
+        cursor: pointer;
     }
 
     .RecaptchaMsg button:hover {
@@ -171,6 +146,14 @@ export const ContentStyle = styled.div`
         color: #0071eb;
         font-size: 13px;
         text-decoration: underline;
+    }
+
+    .RecaptchaToU {
+        color: #8c8c8c;
+        font-size: 13px;
+        text-align: left;
+        margin-bottom: 40px;
+        line-height: 16px;
     }
 `;
 
