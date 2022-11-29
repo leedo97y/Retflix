@@ -1,24 +1,40 @@
 import React from 'react';
-import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv } from './style';
+import { useState } from 'react';
+import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv, SearchDiv } from './style';
 import Logo from 'assets/images/Logo.png';
 import Search from 'assets/images/search.png';
 import Profile from 'assets/images/bubbleProfile.jpg';
 
-const Header = () => {
-    // const [text, setText] = useState('');
-    const [show, setShow] = useState('false');
-    // const [movies, setMovies] = useState([]);
+//import axios from 'axios';
+//import { useNavigate } from 'react-router-dom';
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const request = await axios.get(fetchUrl);
-    //         setMovies(request.data.results);
-    //         console.log(request);
-    //         // console.log(request.data.results[0].title);
-    //         return request;
+const Header = () => {
+    const [value, setValue] = useState('');
+    const [show, setShow] = useState('false');
+
+    const handleChangeValue = e => {
+        e.preventDefault();
+        console.log(e.target.value);
+        setValue(e.target.value);
+    };
+
+    //const baseUrl ='https://api.themoviedb.org/3/genre/movie/list?api_key=ade4d8200b5fce37d7401ffb7f381d9f&language=en-US';
+
+    //const response = axios.get(baseUrl);
+
+    //const navigate = useNavigate();
+
+    // const handleOnClick = e => {
+    //     e.preventDefault();
+
+    //     console.log('Hi');
+    // };
+
+    // const handleOnKeyPress = e => {
+    //     if (e.key === 'Enter') {
+    //         handleOnClick();
     //     }
-    //     fetchData();
-    // }, [fetchUrl]);
+    // };
 
     return (
         <>
@@ -57,11 +73,16 @@ const Header = () => {
                             }}
                         />
                         {show === 'true' && (
-                            <input
-                                className={show ? 'showInput' : 'hideInput'}
-                                id="searchInput"
-                                type="text"
-                            />
+                            <form>
+                                <input
+                                    className={show ? 'showInput' : 'hideInput'}
+                                    id="searchInput"
+                                    type="text"
+                                    value={value}
+                                    onChange={handleChangeValue}
+                                    // onKeyPress={handleOnKeyPress}
+                                />
+                            </form>
                         )}
                     </SearchDiv>
 
