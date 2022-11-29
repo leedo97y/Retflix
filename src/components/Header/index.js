@@ -5,9 +5,6 @@ import Logo from 'assets/images/Logo.png';
 import Search from 'assets/images/search.png';
 import Profile from 'assets/images/bubbleProfile.jpg';
 
-//import axios from 'axios';
-//import { useNavigate } from 'react-router-dom';
-
 const Header = () => {
     const [value, setValue] = useState('');
     const [show, setShow] = useState('false');
@@ -17,24 +14,6 @@ const Header = () => {
         console.log(e.target.value);
         setValue(e.target.value);
     };
-
-    //const baseUrl ='https://api.themoviedb.org/3/genre/movie/list?api_key=ade4d8200b5fce37d7401ffb7f381d9f&language=en-US';
-
-    //const response = axios.get(baseUrl);
-
-    //const navigate = useNavigate();
-
-    // const handleOnClick = e => {
-    //     e.preventDefault();
-
-    //     console.log('Hi');
-    // };
-
-    // const handleOnKeyPress = e => {
-    //     if (e.key === 'Enter') {
-    //         handleOnClick();
-    //     }
-    // };
 
     return (
         <>
@@ -80,7 +59,6 @@ const Header = () => {
                                     type="text"
                                     value={value}
                                     onChange={handleChangeValue}
-                                    // onKeyPress={handleOnKeyPress}
                                 />
                             </form>
                         )}
