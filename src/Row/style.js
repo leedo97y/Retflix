@@ -5,52 +5,47 @@ export const Container = styled.section`
     color: #e5e5e5;
     margin-top: 20px;
 
-    & strong{
+    & strong {
         font-size: 1.4rem;
     }
-    
+
     .rowLines {
         display: flex;
-        overflow-y: hidden; 
-        overflow-x: scroll; 
+        overflow-y: hidden;
+        overflow-x: scroll;
         gap: 10px;
         padding: 20px 0;
 
         &::-webkit-scrollbar {
-            display: none; 
+            display: none;
         }
 
         .imgSizeLarge {
             max-height: 330px;
         }
 
-
         .content {
-
-            &:hover{
-                .icons{
+            &:hover {
+                .icons {
                     display: flex;
+                    transform: scale(1.3);
                     position: absolute;
                 }
+                .rowLineItem {
+                    transform: scale(1.3);
+                    position: relative;
+                }
             }
-            
 
             .rowLineItem {
                 object-fit: contain;
                 max-width: 100%;
                 min-width: 260px;
-                transition: transform 450ms;
                 border-radius: 5px;
-
-                &:hover{
-                    transform: scale(1.2);
-                    transition: all 0.4s linear;
-                    cursor: pointer;
-                }
             }
 
             .icons {
-                width: 240px;
+                width: 260px;
                 height: 100px;
                 background-color: #000;
                 color: #fff;
@@ -58,6 +53,7 @@ export const Container = styled.section`
                 justify-content: space-between;
                 align-items: center;
                 padding: 15px;
+                margin-top: 10px;
                 box-sizing: border-box;
                 border-radius: 0 0 5px 5px;
                 display: none;
@@ -67,22 +63,11 @@ export const Container = styled.section`
                     padding: 3px;
                     color: gray;
                 }
-                
+
                 & .left svg:first-of-type {
                     color: #fff;
                 }
             }
         }
-
-
-
     }
-
-   
-    
-
-
-
-
-
 `;

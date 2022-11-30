@@ -8,6 +8,7 @@ import {
 } from 'react-icons/io';
 import { Container } from './style';
 import Modal from 'components/Modal';
+import { Link } from 'react-router-dom';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
@@ -20,13 +21,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     const [releaseDate, setReleaseDate] = useState('');
     const [overview, setOverview] = useState('');
 
-
-
     const [hover, setHover] = useState(false);
 
-    function changeHover() {
-
-    }
+    function changeHover() {}
 
     const openModal = (title, largeImg, img, releaseDate, overview) => {
         setModalOpen(true);
@@ -45,11 +42,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
-
         }
         fetchData();
     }, [fetchUrl]);
-
 
     return (
         <>
@@ -58,19 +53,20 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
                 <div className="rowLines">
                     {movies.map(movie => {
-
                         return (
                             <div className="content" key={movie.id}>
                                 <img
-                                    // onMouseOver={}
                                     className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
-                                    src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
-                                        }`}
+                                    src={`${base_url}${
+                                        isLargeRow ? movie.poster_path : movie.backdrop_path
+                                    }`}
                                     alt={movie.name}
                                 />
                                 <div className="icons" ref={chHover}>
                                     <span className="left">
-                                        <IoMdArrowDroprightCircle />
+                                        <Link to="/video">
+                                            <IoMdArrowDroprightCircle />{' '}
+                                        </Link>
                                         <IoMdAddCircleOutline />
                                         <IoMdThumbsUp />
                                     </span>
@@ -89,7 +85,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                                     </span>
                                 </div>
                             </div>
-                        )
+                        );
                     })}
                 </div>
             </Container>

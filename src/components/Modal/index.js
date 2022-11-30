@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { ModalWrapper } from './style';
 import { IoMdAddCircleOutline, IoMdThumbsUp } from 'react-icons/io';
 import { IoCloseCircleOutline, IoCaretForwardSharp } from 'react-icons/io5';
-
+import { Link } from 'react-router-dom';
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
 const Modal = props => {
     const { closeModal, movieTitle, img, releaseDate, overview } = props;
-    
+
     return (
         <ModalWrapper>
             <div>
@@ -16,10 +16,12 @@ const Modal = props => {
                     <IoCloseCircleOutline />
                 </button>
                 <span className="buttons">
-                    <button className="playBtn">
-                        <IoCaretForwardSharp />
-                        재생
-                    </button>
+                    <Link to="/video">
+                        <button className="playBtn">
+                            <IoCaretForwardSharp />
+                            재생
+                        </button>
+                    </Link>
                     <IoMdAddCircleOutline />
                     <IoMdThumbsUp />
                 </span>
