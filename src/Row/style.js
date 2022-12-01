@@ -26,10 +26,12 @@ export const Container = styled.section`
 
 
         .content {
+            position: relative;
 
             &:hover{
                 .icons{
-                    display: flex;
+                    width: 100%;
+                    display: block;
                     position: absolute;
                 }
             }
@@ -39,7 +41,6 @@ export const Container = styled.section`
                 object-fit: contain;
                 max-width: 100%;
                 min-width: 260px;
-                transition: transform 450ms;
                 border-radius: 5px;
 
                 &:hover{
@@ -50,8 +51,7 @@ export const Container = styled.section`
             }
 
             .icons {
-                width: 240px;
-                height: 100px;
+   
                 background-color: #000;
                 color: #fff;
                 display: flex;

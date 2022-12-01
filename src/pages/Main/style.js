@@ -28,3 +28,18 @@ export const VideoWrap = styled.div`
     }
 
 `
+
+export const MediaDetail = styled.section`
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+
+    & dl{
+        & dt{}
+
+        & dd{
+            margin-left: 0;
+        }
+    }
+
+`

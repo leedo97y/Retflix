@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios.js';
 import {
     IoIosArrowDropdown,
@@ -12,7 +12,6 @@ import Modal from 'components/Modal';
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
-    const chHover = useRef();
     const [movies, setMovies] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [movieTitle, setMovieTitle] = useState('');
@@ -20,21 +19,12 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     const [releaseDate, setReleaseDate] = useState('');
     const [overview, setOverview] = useState('');
 
-
-
-    const [hover, setHover] = useState(false);
-
-    function changeHover() {
-
-    }
-
     const openModal = (title, largeImg, img, releaseDate, overview) => {
         setModalOpen(true);
         setMovieTitle(title);
         setMovieImg(isLargeRow ? largeImg : img);
         setReleaseDate(releaseDate);
         setOverview(overview);
-        console.log(overview);
     };
 
     const closeModal = () => {
@@ -45,7 +35,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
             setMovies(request.data.results);
-
+            
+            
         }
         fetchData();
     }, [fetchUrl]);
@@ -58,17 +49,15 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
                 <div className="rowLines">
                     {movies.map(movie => {
-
-                        return (
+                            return (
                             <div className="content" key={movie.id}>
                                 <img
-                                    // onMouseOver={}
                                     className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
                                     src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
                                         }`}
                                     alt={movie.name}
                                 />
-                                <div className="icons" ref={chHover}>
+                                <div className="icons" >
                                     <span className="left">
                                         <IoMdArrowDroprightCircle />
                                         <IoMdAddCircleOutline />
@@ -90,6 +79,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                                 </div>
                             </div>
                         )
+                        
                     })}
                 </div>
             </Container>
