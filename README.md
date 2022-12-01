@@ -20,7 +20,7 @@
 | 김채현 | `FE` `Intro Page` |
 | 윤동주 | `팀장` `FE` `Login Page`|
 | 이다노 | `FE` `Main Page`|
-| 이도연 | `FE` `Main Page`|
+| 이도연 | `FE` `Main Page` `MoveProfile Page`|
 | 홍희선 | `FE` `Modal` `Contents`|
 
 ## 🕹 Pages
@@ -43,11 +43,15 @@
 <img style ="width:1000px" src = "https://user-images.githubusercontent.com/75241542/205102446-ddf1694c-be4c-4113-b51b-50f0768782e5.png"/>
 <img style ="width:1000px" src = "https://user-images.githubusercontent.com/75241542/205102443-124ede56-47a0-4401-8ab2-59571f642335.png"/>
 
+### - MoveProfile Page
+<img style ="width:1000px" src = "https://user-images.githubusercontent.com/47781507/205124623-b6016985-6521-49df-b0ec-4a432a497920.png"/>
+
+
 ## 🛠 Tools
 ```
 - View (React with JavaScript, React-Router, @emotion/styled)
 - Build Tool (Create React App)
-- Code Quality Tool (Prettier)
+- Code Quality Tool (Prettier, EsLint)
 - Infrastructure (Vercel)
 - Other Tools (Git, GitHub, Notion, Discord, Jira, Figma)
 ```
