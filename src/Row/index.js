@@ -37,7 +37,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             const request = await axios.get(fetchUrl);
             const res = request.data.results;
             const fil = res.filter((e) => e.title);
-            console.log(fil, "123")
             setMovies(fil);
             
             
@@ -55,8 +54,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                             
                         return (
                             <div className="content" key={movie.id}>
-                            
-                                {/* <p>{movie.title}</p> */}
+
                                 <img
                                     className={`rowLineItem ${isLargeRow && 'imgSizeLarge'}`}
                                     src={`${base_url}${

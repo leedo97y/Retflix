@@ -7,6 +7,27 @@ export const MainContainer = styled.section`
     & article{
         max-height: 1000px;
         width: 100%;
+        position: relative;
+
+        & .ageRating{
+            position: absolute;
+            right: 0;
+            bottom: 20%;
+
+            & span{
+                background-color: rgba(51,51,51,.6);
+                box-sizing: border-box;
+                border-left: 3px solid #dcdcdc;
+                padding: 1.2vw 4vw 1vw 1vw;
+                
+                & small{
+                    color: #fff;
+                    font-size: 2vw;
+                }
+            }
+        }
+
+       
 
         & img{
             max-width: 100%;

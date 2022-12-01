@@ -29,13 +29,11 @@ const Main = () => {
 
         async function fetchData(){
             const res = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`);
-            if(res.status === 404) return;
             console.log(res.data.results)
             setMovie(res.data.results);
             const result = await axios.get(`https://api.themoviedb.org/3/movie/${436270}/keywords?api_key=${API_KEY}`);
             const newKey = {...keywords, id: result.data.keywords[1].id, name: result.data.keywords[1].name}
             setKeywords({...newKey})
-            console.log(keywords)
             const li = await axios.get(`https://api.themoviedb.org/3/movie/${436270}?api_key=${API_KEY}&language=ko-KR`);
             console.log(li,"asdasd")
             
@@ -85,6 +83,14 @@ const Main = () => {
                     {endMovie ? 
                         <>
                             <Movietitle />
+                            <div className='ageRating'>
+                                <span>
+                                    <small>12</small>
+                                    {/* <small>15</small>
+                                    <small>18</small> */}
+                                </span>
+                            </div>
+                            
                             <img src={blackadam} alt="visualImg" />
                         </>
                         :

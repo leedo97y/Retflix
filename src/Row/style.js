@@ -26,8 +26,9 @@ export const Container = styled.section`
         }
 
         .content {
+            overflow: visible;
+
             &:hover {
-                
                 cursor: pointer;
                 .icons {
                     display: flex;
@@ -45,6 +46,13 @@ export const Container = styled.section`
                 max-width: 100%;
                 min-width: 260px;
                 border-radius: 5px;
+                ${'' /* position: relative;
+
+                &:hover{
+                    transform: scale(1.3);
+                }
+                 */}
+
             }
 
             .icons {
