@@ -121,7 +121,7 @@ const Header = () => {
                                         </li>
                                         <li id="option">
                                             <MdPublishedWithChanges />
-                                            <Link to="/">프로필 이전</Link>
+                                            <Link to="/moveProfile">프로필 이전</Link>
                                         </li>
                                         <li id="option">
                                             <IoPersonOutline />

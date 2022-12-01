@@ -36,7 +36,6 @@ export const ImageDiv = styled.div`
         margin-top: 10px;
         width: 130px;
         height: 38px;
-        /* margin-left: 30px; */
         margin-right: 30px;
         cursor: pointer;
     }
