@@ -48,6 +48,8 @@ export const ModalWrapper = styled.div`
         left: 20px;
         display: flex;
         align-items: center;
+
+        
     }
     .buttons svg {
         margin-right: 15px;
@@ -81,4 +83,5 @@ export const ModalWrapper = styled.div`
         font-weight: 900;
         margin-bottom: 20px;
     }
+
 `;

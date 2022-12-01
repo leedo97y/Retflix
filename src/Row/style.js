@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+
 export const Container = styled.section`
     margin-left: 20px;
     color: #e5e5e5;
@@ -25,12 +26,12 @@ export const Container = styled.section`
         }
 
         .content {
-            position: relative;
-
-            &:hover{
-                .icons{
-                    width: 100%;
-                    display: block;
+            &:hover {
+                
+                cursor: pointer;
+                .icons {
+                    display: flex;
+                    transform: scale(1.3);
                     position: absolute;
                 }
                 .rowLineItem {
@@ -47,7 +48,7 @@ export const Container = styled.section`
             }
 
             .icons {
-   
+                width: 260px;
                 background-color: #000;
                 color: #fff;
                 display: flex;
@@ -58,11 +59,16 @@ export const Container = styled.section`
                 box-sizing: border-box;
                 border-radius: 0 0 5px 5px;
                 display: none;
+                
 
                 & svg {
                     font-size: 25px;
                     padding: 3px;
                     color: gray;
+                }
+
+                & .left a{
+                    color: transparent;
                 }
 
                 & .left svg:first-of-type {
