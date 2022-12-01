@@ -1,8 +1,17 @@
 import React, { useState } from "react";
-import { ContentStyle } from './style'
+import { ContentStyle } from "./style";
+import { useLocation } from "react-router-dom";
 
 const LoginContent = () => {
     const [visible, setVisible] = useState(true);
+
+    const location = useLocation()
+    let getid = '';
+    if (location.state !== null) {
+        getid = location.state.id;
+    }
+    const [id, setID] = useState(getid);
+
     return (
         <ContentStyle>
             <article className="LoginContent">
@@ -11,13 +20,13 @@ const LoginContent = () => {
                     <div className="LoginForm">
                         <div className="FieldID">
                             <label>
-                                <input className="InputID" placeholder="이메일 주소 또는 전화번호">
+                                <input className="InputID" placeholder="이메일 주소 또는 전화번호" value={id} onChange={(evt) => { setID(evt.target.value) }}>
                                 </input>
                             </label>
                         </div>
                         <div className="FieldPW">
                             <label>
-                                <input className="InputPW" placeholder="비밀번호">
+                                <input className="InputPW" placeholder="비밀번호" type="password">
                                 </input>
                             </label>
                         </div>
