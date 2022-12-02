@@ -1,6 +1,6 @@
 //intro notice
 import styled from "@emotion/styled";
-import bg from "assets/images/KR_login_bg.jpg";
+import bg from "assets/images/loginBG.jpg";
 
 export const NoticeDiv = styled.div`
     z-index:1;
