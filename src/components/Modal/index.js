@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
 const Modal = props => {
-    const { closeModal, movieTitle, img, releaseDate, overview } = props;
+    const { closeModal, movieTitle, img, releaseDate, overview,color } = props;
 
     return (
         <ModalWrapper>
@@ -23,7 +23,8 @@ const Modal = props => {
                         </button>
                     </Link>
                     <IoMdAddCircleOutline />
-                    <IoMdThumbsUp />
+                    
+                    <IoMdThumbsUp color={color}/>
                 </span>
                 <span className="movieTitle">{movieTitle}</span>
                 <span className="movieInfo">

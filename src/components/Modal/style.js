@@ -48,7 +48,10 @@ export const ModalWrapper = styled.div`
         left: 20px;
         display: flex;
         align-items: center;
-
+        
+        & a{
+            text-decoration: none;
+        }
         
     }
     .buttons svg {
@@ -82,6 +85,14 @@ export const ModalWrapper = styled.div`
     .movieInfo span:first-of-type {
         font-weight: 900;
         margin-bottom: 20px;
+    }
+
+    .active{
+        color: skyblue;
+    }
+
+    .gray{
+        color: gray;
     }
 
 `;

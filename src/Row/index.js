@@ -19,6 +19,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     const [movieImg, setMovieImg] = useState('');
     const [releaseDate, setReleaseDate] = useState('');
     const [overview, setOverview] = useState('');
+    const [active, setActive] = useState(false);
+    const [color, setColor] = useState("gray");
 
     const openModal = (title, largeImg, img, releaseDate, overview) => {
         setModalOpen(true);
@@ -68,13 +70,19 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                                             <IoMdArrowDroprightCircle />{' '}
                                         </Link>
                                         <IoMdAddCircleOutline />
-                                        <IoMdThumbsUp />
+                                        <IoMdThumbsUp onClick={(e) => {
+                                            setActive(!active);
+                                            e.target.style.color = active? "skyblue" : "gray";
+                                            setColor(e.target.style.color);
+                                            
+                                            console.log("aaaaaaa")
+                                        }} />
                                     </span>
                                     <span className="right">
                                         <IoIosArrowDropdown
                                             onClick={() => {
                                                 openModal(
-                                                    movie.name,
+                                                    movie.name || movie.title,
                                                     movie.poster_path,
                                                     movie.backdrop_path,
                                                     movie.first_air_date,
@@ -98,6 +106,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                     img={movieImg}
                     releaseDate={releaseDate}
                     overview={overview}
+                    color={color}
                 ></Modal>
             )}
         </>
