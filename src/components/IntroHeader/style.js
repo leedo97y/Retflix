@@ -24,7 +24,8 @@ export const Headerdiv = styled.div`
     .item.button{
         justify-content: flex-end;
         padding-top: 50px;
-        padding-right:50px;   
+        padding-right:50px;
+        
     }
     .item.button button{
         width : 100px;
@@ -33,6 +34,11 @@ export const Headerdiv = styled.div`
         color:white;
         border : none;
         border-radius : 5px;
+        cursor: pointer;   
+
+        &:hover{
+            font-weight: 900;
+        }
     }
 
 `
