@@ -3,9 +3,9 @@ import React from "react";
 import IntroHeader from "components/IntroHeader";
 import { IntroContentText, IntroContentVideo } from "components/IntroContent";
 import IntroNotice from "components/IntroNotice";
-import { IntroContainer, IntroContent } from "./style"
-import Footer from "components/Footer"
-
+import { IntroContainer, IntroContent } from "./style";
+import Footer from "components/Footer";
+import IntroFQA from "components/IntroFQA";
 const Intro = () => {
     const intro = [
         {
@@ -81,6 +81,7 @@ const Intro = () => {
                     <IntroContentText header={intro[3].header} content={intro[3].content} />
                 </div>
             </IntroContent>
+            <IntroFQA/>
             <Footer />
         </IntroContainer>
     );

@@ -1,6 +1,8 @@
 //IntroNotice
 import React,{useState} from "react";
 import {NoticeDiv} from'./style';
+import { useNavigate } from 'react-router-dom';
+
 
 const inputStatus ={
     NORMAL: "normal",
@@ -10,8 +12,9 @@ const inputStatus ={
 
 const IntroNotice = (props)=>{
     const [status,setStatus] = useState(inputStatus.NORMAL);
-    const [email,setEmail] = useState('   ');
-    const [err,setErr] = useState('dfsfsfsd')
+    const [email,setEmail] = useState('');
+    const [err,setErr] = useState('');
+    const navigate = useNavigate();
 
     const emailHandler=(evt)=>{ //input 바뀔때마다
         evt.preventDefault();
@@ -24,7 +27,13 @@ const IntroNotice = (props)=>{
         evt.preventDefault();
         const check = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
         if(check.test(email)){
-            setStatus(inputStatus.SUCCESS)
+            setStatus(inputStatus.SUCCESS);
+            navigate(`/login`,{
+                state:{
+                    id : email
+                }
+            });
+            
         }else{
             setErr("정확한 이메일 주소를 입력하세요.");
             setStatus(inputStatus.ERROR)

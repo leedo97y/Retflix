@@ -1,7 +1,6 @@
 //intro notice
 import styled from "@emotion/styled";
 import bg from "assets/images/KR_login_bg.jpg";
-import { Normal } from './style';
 
 export const NoticeDiv = styled.div`
     z-index:1;
@@ -47,13 +46,13 @@ export const NoticeDiv = styled.div`
 
 
     }
-    & .noticeContainer div:nth-child(1){
+    & .noticeContainer div:nth-of-type(1){
         font-size: 50px;
     }
-    & .noticeContainer div:nth-child(2){
+    & .noticeContainer div:nth-of-type(2){
         font-size: 25px;
     }
-    & .noticeContainer div:nth-child(3){
+    & .noticeContainer div:nth-of-type(3){
         font-size: 20px;
     }
     & .noticeContainer form{
