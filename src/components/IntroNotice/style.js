@@ -1,5 +1,6 @@
 //intro notice
 import styled from "@emotion/styled";
+import bg from "assets/images/KR_login_bg.jpg";
 
 export const NoticeDiv = styled.div`
     z-index:1;
@@ -9,6 +10,18 @@ export const NoticeDiv = styled.div`
     display: flex;
     justify-content : center;
     align-items :center;
+    background-image: url(${bg});
+    .error{
+        border-bottom: 3px solid #ffa00a;
+
+    }
+    .normal{        
+        border : none;
+    }
+    .success{
+        border-bottom: 2px solid blue;
+
+    }
 
     & .noticeContainer{
         width: 100%;
@@ -20,17 +33,26 @@ export const NoticeDiv = styled.div`
         align-items :center;
         text-align: center;
     }
+
     & .noticeContainer div{ //글자들
         margin: 10px;
     }
-    
-    & .noticeContainer div:nth-child(1){
+    & .errorText{
+        color:#ffa00a;
+        width : 60%;
+
+        max-width : 700px;
+        text-align: start;
+
+
+    }
+    & .noticeContainer div:nth-of-type(1){
         font-size: 50px;
     }
-    & .noticeContainer div:nth-child(2){
+    & .noticeContainer div:nth-of-type(2){
         font-size: 25px;
     }
-    & .noticeContainer div:nth-child(3){
+    & .noticeContainer div:nth-of-type(3){
         font-size: 20px;
     }
     & .noticeContainer form{
@@ -62,3 +84,4 @@ export const NoticeDiv = styled.div`
         color: white;
     }
 `;
+
