@@ -3,9 +3,9 @@ import React from "react";
 import IntroHeader from "components/IntroHeader";
 import { IntroContentText, IntroContentVideo } from "components/IntroContent";
 import IntroNotice from "components/IntroNotice";
-import { IntroContainer, IntroContent } from "./style"
-import Footer from "components/Footer"
-
+import { IntroContainer, IntroContent } from "./style";
+import Footer from "components/Footer";
+import IntroFQA from "components/IntroFQA";
 const Intro = () => {
     const intro = [
         {
@@ -56,8 +56,7 @@ const Intro = () => {
     return (
         <IntroContainer>
             <IntroHeader />
-            <IntroNotice src={`https://assets.nflxext.com/ffe/siteui/vlv3/5aecc44d-2a1f-4313-8399-98df20908b64/47e9a72c-4e54-4be7-993f-91413ee2dd47/KR-ko-20221114-popsignuptwoweeks-perspective_alpha_website_large.jpg`}>
-            </IntroNotice>
+            <IntroNotice />
             <IntroContent>
                 <div className="border">
                     <IntroContentText header={intro[0].header} content={intro[0].content} />
@@ -82,6 +81,7 @@ const Intro = () => {
                     <IntroContentText header={intro[3].header} content={intro[3].content} />
                 </div>
             </IntroContent>
+            <IntroFQA/>
             <Footer />
         </IntroContainer>
     );
