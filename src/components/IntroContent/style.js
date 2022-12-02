@@ -1,18 +1,10 @@
 import styled from '@emotion/styled';
 export const ContentText = styled.div`
     padding: 30px 20px;
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows : 0.5fr 0.5fr;
 
-
-    div{
-        /* border: 3px solid red; */
-        /* display : flex;
-        justify-content: flex-start;
-        align-content: flex-start; */
-    }
     div.header{
         padding : 20px;
         font-size: 50px;
@@ -52,15 +44,6 @@ export const ContentVideo = styled.div`
 
     }
     div.video video{
-        /* border: 3px solid green; */
-
         height : ${props=>props.height};
-        /* margin-top: 100px; */
     }
 `;
-
-//안먹음
-// export const ContentContainer = styled.div`
-//     height:300px;
-
-// `;
