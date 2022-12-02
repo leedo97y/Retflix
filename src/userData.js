@@ -20,6 +20,12 @@ const users = [
     },
 ];
 
+const userToken = Math.random();
+
 export const db = {
     users,
 };
+
+export const token = {
+    userToken
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ContentStyle } from './style';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from 'components/LoginForm';
-import { db } from "userData";
+import { db, token} from "userData";
 
 const LoginContent = () => {
     const [visible, setVisible] = useState(true);
@@ -15,6 +15,7 @@ const LoginContent = () => {
             (user) => user.id === id && user.password === password
         );
         if (isFound) {
+            sessionStorage.setItem("user", JSON.stringify(token))
             navigate('/');
         }
         else {

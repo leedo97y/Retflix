@@ -48,6 +48,11 @@ export const ModalWrapper = styled.div`
         left: 20px;
         display: flex;
         align-items: center;
+        
+        & a{
+            text-decoration: none;
+        }
+        
     }
     .buttons svg {
         margin-right: 15px;
@@ -81,4 +86,13 @@ export const ModalWrapper = styled.div`
         font-weight: 900;
         margin-bottom: 20px;
     }
+
+    .active{
+        color: skyblue;
+    }
+
+    .gray{
+        color: gray;
+    }
+
 `;

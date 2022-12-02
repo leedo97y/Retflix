@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from 'pages/Login';
 import Main from 'pages/Main';
 import Intro from 'pages/Intro';
+import Video from 'pages/Video';
 import MoveProfile from 'pages/MoveProfile';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
                 <Route exact path="/" element={<Main />} /> {/* => 메인페이지 */}
                 <Route path="/login" element={<Login />} /> {/* => 로그인페이지 */}
                 <Route path="/intro" element={<Intro />} /> {/* => intro 페이지 */}
+                <Route path="/video" element={<Video />} /> {/* => video 페이지 */}
                 <Route path="/moveProfile" element={<MoveProfile />} />
             </Routes>
         </BrowserRouter>
