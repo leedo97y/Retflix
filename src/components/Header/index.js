@@ -2,23 +2,38 @@ import React, { useState } from 'react';
 import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv, SearchDiv } from './style';
 import Logo from 'assets/images/Logo.png';
 import Search from 'assets/images/search.png';
-import Profile from 'assets/images/bubbleProfile.jpg';
+
+import Djyun from 'assets/images/djyun.jpeg';
+import Dieno from 'assets/images/daino.jpeg';
+import Rock from 'assets/images/rock2.png';
+import Danbi from 'assets/images/danbi.jpg';
+import Doy from 'assets/images/dooy.jpeg';
+
+import { BiCaretDown } from 'react-icons/bi';
+import { BsQuestionCircle } from 'react-icons/bs';
+import { IoPersonOutline } from 'react-icons/io5';
+import { HiOutlinePencilSquare } from 'react-icons/hi2';
+import { MdPublishedWithChanges } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-    // const [text, setText] = useState('');
+    const [value, setValue] = useState('');
     const [show, setShow] = useState('false');
-    // const [movies, setMovies] = useState([]);
+    const [unfold, setUnfold] = useState('false');
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const request = await axios.get(fetchUrl);
-    //         setMovies(request.data.results);
-    //         console.log(request);
-    //         // console.log(request.data.results[0].title);
-    //         return request;
-    //     }
-    //     fetchData();
-    // }, [fetchUrl]);
+    const handleChangeValue = e => {
+        e.preventDefault();
+        console.log(e.target.value);
+        setValue(e.target.value);
+    };
+
+    const handleMouseOver = () => {
+        setUnfold('true');
+    };
+
+    const handleMouseLeave = () => {
+        setUnfold('false');
+    };
 
     return (
         <>
@@ -28,21 +43,21 @@ const Header = () => {
                 </ImageDiv>
                 <LeftSide>
                     <span>
-                        <a href="/">홈</a>
+                        <Link to="/">홈</Link>
                     </span>
                     <span>
-                        <a href="/series">시리즈</a>
+                        <Link to="/">시리즈</Link>
                     </span>
                     <span>
-                        <a href="/movie">영화</a>
+                        <Link to="/">영화</Link>
                     </span>
                     <span>
-                        <a href="https://about.netflix.com/ko/new-to-watch">
+                        <Link to="https://about.netflix.com/ko/new-to-watch">
                             NEW! 요즘 대세 콘텐츠
-                        </a>
+                        </Link>
                     </span>
                     <span>
-                        <a href="/like">내가 찜한 콘텐츠</a>
+                        <Link to="/">내가 찜한 콘텐츠</Link>
                     </span>
                 </LeftSide>
                 <RightSide>
@@ -57,20 +72,71 @@ const Header = () => {
                             }}
                         />
                         {show === 'true' && (
-                            <input
-                                className={show ? 'showInput' : 'hideInput'}
-                                id="searchInput"
-                                type="text"
-                            />
+                            <form>
+                                <input
+                                    className={show ? 'showInput' : 'hideInput'}
+                                    id="searchInput"
+                                    type="text"
+                                    value={value}
+                                    onChange={handleChangeValue}
+                                />
+                            </form>
                         )}
                     </SearchDiv>
 
                     <ProfileDiv>
-                        <img id="profileImg" src={Profile} alt="profile" />
-                        <select id="select">
-                            <option></option>
-                            <option>계정관리</option>
-                        </select>
+                        <article id="select">
+                            <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+                                <div id="selectButton">
+                                    <img id="profileImg" src={Doy} alt="profile" />
+                                    <button>
+                                        <BiCaretDown />
+                                    </button>
+                                </div>
+                                {unfold === 'true' && (
+                                    <ul id="selectBox">
+                                        <li id="option">
+                                            <img src={Djyun} alt="djyun profile" />
+                                            <Link to="/">djyun</Link>
+                                        </li>
+                                        <li id="option">
+                                            <img src={Rock} alt="rock profile" />
+                                            <Link to="/">돌멩이</Link>
+                                        </li>
+                                        <li id="option">
+                                            <img src={Dieno} alt="dieno profile" />
+                                            <Link to="/">dieno</Link>
+                                        </li>
+                                        <li id="option">
+                                            <img src={Danbi} alt="ggongjukim profile" />
+                                            <Link to="/">ggongjukim</Link>
+                                        </li>
+
+                                        <hr />
+                                        <li id="option">
+                                            <HiOutlinePencilSquare />
+                                            <Link to="/">프로필 관리</Link>
+                                        </li>
+                                        <li id="option">
+                                            <MdPublishedWithChanges />
+                                            <Link to="/moveProfile">프로필 이전</Link>
+                                        </li>
+                                        <li id="option">
+                                            <IoPersonOutline />
+                                            <Link to="/">계정</Link>
+                                        </li>
+                                        <li id="option">
+                                            <BsQuestionCircle />
+                                            <a href="https://help.netflix.com/ko/">고객센터</a>
+                                        </li>
+                                        <hr />
+                                        <li id="logout">
+                                            <Link to="/login">넷플릭스에서 로그아웃</Link>
+                                        </li>
+                                    </ul>
+                                )}
+                            </div>
+                        </article>
                     </ProfileDiv>
                 </RightSide>
             </Nav>
