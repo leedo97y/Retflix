@@ -1,6 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
-
+import React, { useState } from 'react';
 import { Nav, LeftSide, RightSide, ImageDiv, ProfileDiv, SearchDiv } from './style';
 import Logo from 'assets/images/Logo.png';
 import Search from 'assets/images/search.png';
