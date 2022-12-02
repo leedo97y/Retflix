@@ -1,135 +1,85 @@
 // LoginContent
 import styled from "@emotion/styled";
+
 export const ContentStyle = styled.div`
     padding: 15px;
 
-    /* .BGimg {
-        position: relative;
-        background-image: url('assets/images/KR_login_bg.jpg');
-        height: 100vh;
-        background-size: cover;
-    } */
-
-    .loginBG {
-        position: relative;
-        /* height: 100vh; */
-        background-size: cover;
-        opacity: 50%;
-    }
-
-    /* .BGimg-cover {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.4);                                                              
-        z-index: 1;
-    } */
-
     .LoginContent {
-        max-width: 400px;
-        margin: 2vh auto;
-        /* padding: 30px; */
-        background: #000;
+        max-width: 314px;
+        min-height: 665px;
+        margin: 0.5vh auto 8vh auto;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 0px 68px 0px 68px;
         border-radius: 4px;
-        z-index: 2;
-        
-    }
-
-    .LoginContent::after {
-        max-width: 400px;
-        margin: 2vh auto;
-        padding: 30px;
-        background: #000;
-        border-radius: 4px;
-        opacity: 75%;
+        display: flex;
+        flex-direction: column;
     }
 
     .LoginMainForm {
         display: flex;
         flex-direction: column;
-        align-items: left;
     }
 
     h1 {
         color: #fff;
         font-size: 32px;
-        margin: 60px 68px auto 40px;
-    }
-
-    .LoginForm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .InputID {
-        background: #333333;
-        border-color: none;
-        outline: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border-width: 0;
-        border-radius: 4px;
-        font-size: 16px;
-        line-height: 50px;
-        width: 314px;
-        margin: 28px 68px 19px 68px;
-    }
-
-    .InputPW {
-        background: #333333;
-        border-color: none;
-        outline: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border-width: 0;
-        border-radius: 4px;
-        font-size: 16px;
-        line-height: 50px;
-        width: 314px;
-        margin: 19px 68px 0 68px;
-    }
-
-    .InputID:focus,
-    .InputPW:focus {
-        outline: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border-radius: 4px;
-        caret-color: #fff;
-    }
-
-    .InputID::placeholder,
-    .InputPW::placeholder {
-        padding: 0 20px;
-        color: #8c8c8c;
+        margin: 60px 68px 0px 0px;
         font-weight: 500;
     }
-
-    .placeLabel {
-        color: #8c8c8c;
-        font-weight: 400;
-        font-size: 16px;
+    
+    .LoginHelp {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .LoginBtn {
-        background: #e50914;
-        color: #fff;
-        font-size: 16px;
-        line-height: 16px;
-        text-align: center;
-        box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 0px 0px;
-        padding: 10px auto;
-        cursor: pointer;
-        border-radius: 4px;
-        margin: 62px 68px;
-        padding: 16px;
-        height: 48px;
-        width: 314px;
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #737373;
+        margin: 0;
+        border: none;
+        border-radius: 2px;
+        outline: 0;
+        width: 16px;
+        height: 16px;
     }
     
+    input[type="checkbox"]::after {
+        content: '✔';
+        padding-left: 3px;
+        display: none;
+    }
+
+    input[type="checkbox"]:checked {
+        /* background: #fff; */
+    }
+
+    input[type="checkbox"]:checked::after {
+        display: block;
+    }
+
+    .rememberMeText {
+        color: #b3b3b3;
+        font-size: 13px;
+        font-weight: 400;
+        margin-left: 5px;
+    }
+
+    .LoginHelpLink {
+        color: #b3b3b3;
+        font-size: 13px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    .LoginHelpLink:hover {
+        text-decoration: underline;
+    }
+
     .LoginSubText {
-        margin: auto 48px 117px 48px;
+        margin: 60px 0px auto 0px;
     }
 
     .SignUpNow {
@@ -148,6 +98,10 @@ export const ContentStyle = styled.div`
         text-decoration: underline;
     }
 
+    .RecaptchaMsg p {
+        height: 35px;
+    }
+
     .RecaptchaMsg p span {
         color: #8c8c8c;
         font-size: 13px;
@@ -158,6 +112,7 @@ export const ContentStyle = styled.div`
         border: none;
         color: #0071eb;
         font-size: 13px;
+        cursor: pointer;
     }
 
     .RecaptchaMsg button:hover {
@@ -166,6 +121,19 @@ export const ContentStyle = styled.div`
         color: #0071eb;
         font-size: 13px;
         text-decoration: underline;
+    }
+
+    .RecaptchaToU {
+        color: #8c8c8c;
+        font-size: 13px;
+        text-align: left;
+        /* margin-bottom: 40px; */
+        line-height: 16px;
+    }
+
+    .RecaptchaToU a {
+        color: #0071eb;
+        text-decoration: none;
     }
 `;
 

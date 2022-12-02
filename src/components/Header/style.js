@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 
 export const Nav = styled.div`
+    z-index: 99;
     position: fixed;
     top: 0;
     width: 100%;
