@@ -7,9 +7,11 @@ import Footer from "components/Footer";
 const Login = () => {
     return (
         <LoginContainer>
-            <LoginHeader />
-            <LoginContent />
-            <Footer />
+            <div className="BGcover">
+                <LoginHeader />
+                <LoginContent />
+                <Footer />
+            </div>
         </LoginContainer>
     )
 }

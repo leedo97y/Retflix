@@ -6,8 +6,9 @@ export const Nav = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
+    padding: 0 28px;
     display: grid;
-    grid-template-columns: 1fr 5fr 1.2fr;
+    grid-template-columns: 1fr 5fr 300px;
     align-items: center;
     height: 70px;
     background: linear-gradient(
@@ -35,7 +36,6 @@ export const ImageDiv = styled.div`
         margin-top: 10px;
         width: 130px;
         height: 38px;
-        margin-left: 30px;
         margin-right: 30px;
         cursor: pointer;
     }
@@ -94,6 +94,24 @@ export const SearchDiv = styled.div`
     }
 `;
 
+const rotation = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+`;
+
+const endRotation = keyframes`
+from {
+                transform: rotate(180deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+`;
+
 export const ProfileDiv = styled.div`
     display: flex;
     margin-left: 20px;
@@ -101,20 +119,84 @@ export const ProfileDiv = styled.div`
     #profileImg {
         width: 30px;
         height: 30px;
-        margin-right: 5px;
-        cursor: pointer;
-    }
-    #select {
-        width: 20px;
-        color: #fff;
-        background-color: transparent;
-        border: none;
-        margin-top: 5px;
+
         cursor: pointer;
     }
 
-    #select:focus-visible {
+    #select {
+        position: relative;
+    }
+
+    #selectButton {
+        background-color: transparent;
         border: none;
-        outline: none;
+        cursor: pointer;
+
+        button {
+            width: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        svg {
+            color: #fff;
+            width: 20px;
+            height: 25px;
+            margin-left: 5px;
+            animation: ${endRotation} 1s ease;
+            animation-fill-mode: none;
+        }
+
+        svg:hover {
+            animation: ${rotation} 1s ease;
+            animation-fill-mode: both;
+        }
+    }
+
+    #selectBox {
+        position: absolute;
+        right: 0;
+        list-style: none;
+        margin: 5px 0;
+        padding: 20px;
+        width: 200px;
+        height: 410px;
+        background-color: rgba(2, 2, 2, 0.85);
+
+        hr {
+            width: 200px;
+            border: 0.7px solid rgba(116, 116, 116, 0.3);
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 5px 8px;
+            margin-bottom: 3px;
+            box-sizing: border-box;
+            cursor: pointer;
+
+            img {
+                width: 35px;
+                border-radius: 5px;
+            }
+
+            svg {
+                color: #b0b0b0;
+                width: 23px;
+                height: 23px;
+            }
+
+            a {
+                color: #b0b0b0;
+                margin-left: 10px;
+            }
+        }
+
+        li:last-child {
+            padding-left: 15px;
+        }
     }
 `;
