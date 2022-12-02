@@ -84,8 +84,8 @@ const IntroFQA =()=>{
         <FQAcontainer>
             <p>자주 묻는 질문</p>
             {
-                data.map(item=>{
-                    return <FQA data={item}></FQA>
+                data.map((item, idx)=>{
+                    return <FQA data={item} key={idx}></FQA>
                 })
             }
         </FQAcontainer>

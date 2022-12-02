@@ -16,7 +16,7 @@ const Main = () => {
     const API_KEY = 'ade4d8200b5fce37d7401ffb7f381d9f';
     
     const [movie, setMovie] = useState([]);
-    const [endMovie, setEndMovie] = useState(true);
+    const [endMovie, setEndMovie] = useState(false);
     const [keywords, setKeywords] = useState({
         id: "",
         name: ""
