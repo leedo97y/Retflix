@@ -35,6 +35,11 @@ const Header = () => {
         setUnfold('false');
     };
 
+    const onClickRemove = () => {
+        let removeToken = sessionStorage.removeItem('user');
+        return removeToken;
+    };
+
     return (
         <>
             <Nav>
@@ -130,7 +135,7 @@ const Header = () => {
                                             <a href="https://help.netflix.com/ko/">고객센터</a>
                                         </li>
                                         <hr />
-                                        <li id="logout">
+                                        <li id="logout" onClick={onClickRemove}>
                                             <Link to="/login">넷플릭스에서 로그아웃</Link>
                                         </li>
                                     </ul>
